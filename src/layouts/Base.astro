@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  activePage?: string;
+}
+
+const {
+  title = 'Coolmonk',
+  description = 'Platform engineer. Music producer. Film photographer.',
+  activePage = '',
+} = Astro.props;
+
+const pageTitle = activePage === 'work'
+  ? 'Suresh Raju — Coolmonk'
+  : 'Coolmonk';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{pageTitle}</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∿</text></svg>" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="nav-brand">coolmonk</a>
+    <div class="nav-links">
+      <a href="/work" class:list={[{ active: activePage === 'work' }]}>work</a>
+      <a href="https://soundcloud.com/mediumcoffee" target="_blank" rel="noopener noreferrer">music ↗</a>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    suresh raju &nbsp;·&nbsp; {new Date().getFullYear()}
+  </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base activePage="home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Suresh<br /><em>Raju</em></h1>
+    <p class="hero-tagline">
+      Platform engineer by trade. Music producer by night.<br />
+      Film photographer when I remember to load the camera.
+    </p>
+    <span class="hero-location">San Francisco Bay Area</span>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <span class="section-label">About</span>
+    <p>
+      I build and run cloud infrastructure at scale — multi-cluster Kubernetes,
+      distributed systems, the kind of plumbing that has to work at 3 AM.
+      Over the past twenty-five years I've done this across America, Europe,
+      and Asia for companies ranging from early-stage to large enterprise.
+    </p>
+    <p style="color: var(--text-muted);">
+      Outside of work I produce ambient and electronic music under the name
+      <a href="https://soundcloud.com/mediumcoffee" target="_blank" rel="noopener">MediumCoffee</a>,
+      and shoot in black and white — mostly film.
+    </p>
+
+    <blockquote>
+      <p>I start in the middle of a sentence and move both directions at once.</p>
+      <cite>— John Coltrane</cite>
+    </blockquote>
+  </section>
+
+  <!-- Work teaser -->
+  <section class="section">
+    <span class="section-label">Work</span>
+    <p>
+      Currently doing site reliability engineering at Cloudera, building scalable
+      infrastructure on Kubernetes for the Cloudera data platform.
+      Previously at Mux, Optimizely, Reltio, and Oracle.
+    </p>
+    <a href="/work" class="teaser-link">Full profile →</a>
+  </section>
+
+  <!-- Music -->
+  <section class="section">
+    <span class="section-label">Music</span>
+    <p>
+      I produce under the name MediumCoffee — mostly ambient, electronic,
+      and jazz-influenced. The set below is from the last couple of years.
+    </p>
+    <div style="margin-top: 1.5rem;">
+      <iframe
+        width="100%"
+        height="300"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        style="border-radius: 2px;"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1561234567&color=%23c4a46b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+      ></iframe>
+      <p style="margin-top: 0.75rem;">
+        <a href="https://soundcloud.com/mediumcoffee" target="_blank" rel="noopener">
+          More on SoundCloud ↗
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Photography -->
+  <section class="section">
+    <span class="section-label">Photography</span>
+    <p>
+      I shoot mostly in black and white. Film when I can, digital when I have to.
+      Below is a frame from the Venice Biennale.
+    </p>
+    <div class="photo-wrapper">
+      <img
+        src="/images/00010020.jpg"
+        alt="Venice Biennale, black and white film photograph"
+        loading="lazy"
+      />
+      <p class="photo-caption">Venice Biennale — 35mm film</p>
+    </div>
+  </section>
+
+</Base>

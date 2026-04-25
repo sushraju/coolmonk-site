@@ -1,0 +1,170 @@
+---
+import Base from '../layouts/Base.astro';
+import WorkEntry from '../components/WorkEntry.astro';
+
+const experience = [
+  {
+    title: 'Site Reliability Engineering',
+    period: 'Nov 2023 – present',
+    company: 'Cloudera',
+    bullets: [
+      'Building scalable, performant infrastructure on Kubernetes supporting the Cloudera data platform across hybrid and public cloud.',
+    ],
+  },
+  {
+    title: 'Platform & Infrastructure',
+    period: 'Apr 2021 – Jun 2023',
+    company: 'Mux, San Francisco',
+    bullets: [
+      'Built and scaled the core platform underpinning the video and video analytics products.',
+      'Scaled platform analytics to support some of the largest live streaming sporting events.',
+    ],
+  },
+  {
+    title: 'Site Reliability Engineering',
+    period: 'Jun 2020 – Apr 2021',
+    company: 'Optimizely, San Francisco',
+    bullets: [
+      'Owned performance, reliability, CDN, DNS, data infrastructure and automation.',
+    ],
+  },
+  {
+    title: 'Senior Manager, Platform & Infrastructure',
+    period: 'Jun 2019 – Feb 2020',
+    company: 'Reltio, Redwood Shores',
+    bullets: [
+      'Built and managed large-scale infrastructure for a cloud-native MDM SaaS platform on AWS and GCP.',
+      'Responsible for automation, scale, performance and observability of the cloud infrastructure and software stack — Cassandra and Elasticsearch.',
+      'Led a distributed team of infrastructure engineers. Implemented SRE principles for 24×7 support operations.',
+    ],
+  },
+  {
+    title: 'Senior Manager, Oracle Management Cloud',
+    period: 'Dec 2015 – May 2019',
+    company: 'Oracle, Redwood Shores',
+    bullets: [
+      'Built the DevOps/SRE function for a monitoring and analytics platform deployed globally. Owned observability for CDN, EUM, APM, logs, security and monitoring.',
+      'Built scalable and performant infrastructure for accelerated promotion of services to production.',
+      'Full ownership of deployment, process automation and observability across the entire stack including Hadoop and Kafka clusters.',
+    ],
+  },
+  {
+    title: 'Technology Management, Open Source & Engagements',
+    period: 'Nov 2005 – Nov 2015',
+    company: 'Oracle / Sun — Bay Area, Prague, Bangalore',
+    bullets: [
+      'Led and executed data centre management projects across complex enterprise environments.',
+      'Defined and managed crisis engagements that resulted in millions of dollars in retained revenue.',
+      'Official committer for Eclipse on Solaris x86 (Sun Microsystems).',
+      'Represented Sun at conferences and universities on data centre management.',
+    ],
+  },
+  {
+    title: 'Lead Systems Engineer',
+    period: 'Jun 1999 – Oct 2005',
+    company: 'Tata Infotech, Bangalore / Chicago',
+    bullets: [
+      'Defined, managed and executed statements of work for Ascom, Qualcomm and World Book.',
+      'Liaised between on-site teams and offshore technology development.',
+    ],
+  },
+];
+
+const skills = [
+  {
+    group: 'Infrastructure',
+    tags: ['Kubernetes', 'Docker', 'Envoy', 'Karpenter', 'Linux', 'Solaris'],
+  },
+  {
+    group: 'Cloud',
+    tags: ['AWS', 'GCP', 'OCI'],
+  },
+  {
+    group: 'Platform',
+    tags: ['Vault', 'Terraform', 'ArgoCD', 'Istio', 'Helm'],
+  },
+  {
+    group: 'Data & Streaming',
+    tags: ['Kafka', 'Flink', 'Zookeeper', 'Redis', 'Solr', 'ELK'],
+  },
+  {
+    group: 'Edge & Networking',
+    tags: ['Akamai', 'Cloudflare', 'Security', 'Networking'],
+  },
+  {
+    group: 'Languages',
+    tags: ['Java', 'Go', 'Python', 'Perl', 'Shell'],
+  },
+];
+---
+
+<Base activePage="work" description="Suresh Raju — Platform engineer and SRE with 25 years across infrastructure, distributed systems, and cloud.">
+
+  <!-- Profile header -->
+  <section class="profile-header">
+    <span class="section-label">Profile</span>
+    <h1 style="font-size: clamp(2rem, 5vw, 3rem);">Suresh Raju</h1>
+    <p style="font-style: italic; color: var(--text-muted); margin-top: 0.5rem; font-size: 1.05rem;">
+      Scalable infrastructure &amp; site reliability
+    </p>
+    <div class="profile-links">
+      <a href="https://linkedin.com/in/sushraju" target="_blank" rel="noopener">linkedin ↗</a>
+      <a href="https://github.com/sushraju" target="_blank" rel="noopener">github ↗</a>
+      <a href="https://coolmonk.org">coolmonk.org</a>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="section">
+    <span class="section-label">Summary</span>
+    <p>
+      Twenty-five years of experience in scalable cloud infrastructure, distributed systems,
+      product development, technology management and customer success across America, Europe and Asia.
+    </p>
+    <p style="color: var(--text-muted);">
+      I build and stabilise data pipelines and platform infrastructure that drive customer adoption.
+      I've mentored and led engineering teams to deliver on problems of performance, scale, reliability
+      and data management — from early-stage startups to global enterprise platforms.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section class="section">
+    <span class="section-label">Experience</span>
+    <div style="margin-top: 0.5rem;">
+      {experience.map(entry => (
+        <WorkEntry
+          title={entry.title}
+          period={entry.period}
+          company={entry.company}
+          bullets={entry.bullets}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section">
+    <span class="section-label">Skills</span>
+    <div class="skills-grid">
+      {skills.map(({ group, tags }) => (
+        <div class="skill-group">
+          <h3>{group}</h3>
+          <div class="skill-tags">
+            {tags.map(tag => <span class="skill-tag">{tag}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <span class="section-label">Education</span>
+    <div class="edu-entry">
+      <p class="edu-degree">Master of Computer Science &amp; Applications</p>
+      <p class="edu-school">PSG College of Technology, Coimbatore</p>
+    </div>
+  </section>
+
+</Base>

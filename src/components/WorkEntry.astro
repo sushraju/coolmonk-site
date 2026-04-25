@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  period: string;
+  company: string;
+  bullets: string[];
+}
+
+const { title, period, company, bullets } = Astro.props;
+---
+
+<div class="work-entry">
+  <div class="work-meta">
+    <span class="work-period">{period}</span>
+    <span class="work-company">{company}</span>
+  </div>
+  <p class="work-title">{title}</p>
+  <ul class="work-bullets">
+    {bullets.map(bullet => <li>{bullet}</li>)}
+  </ul>
+</div>

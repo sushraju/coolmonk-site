@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=DM+Mono:wght@300;400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:            #0d0c0a;
+  --bg-surface:    #131210;
+  --text:          #e6e0d4;
+  --text-muted:    #7c756c;
+  --text-dim:      #4a4540;
+  --accent:        #c4a46b;
+  --accent-subtle: rgba(196, 164, 107, 0.08);
+  --accent-border: rgba(196, 164, 107, 0.18);
+  --border:        rgba(230, 224, 212, 0.08);
+  --max-w:         700px;
+  --nav-h:         60px;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navigation ─────────────────────────────────────────── */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(13, 12, 10, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+}
+
+.nav-brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.nav-brand:hover { opacity: 0.65; }
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+
+/* ── Layout ─────────────────────────────────────────────── */
+
+main {
+  flex: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.footer {
+  max-width: var(--max-w);
+  margin: 5rem auto 0;
+  padding: 2rem;
+  width: 100%;
+  border-top: 1px solid var(--border);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+h3 {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+p {
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover { opacity: 0.7; }
+
+strong {
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* ── Section anatomy ────────────────────────────────────── */
+
+.section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* ── Hero ───────────────────────────────────────────────── */
+
+.hero {
+  padding: 6rem 0 5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-tagline {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.hero-location {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-location::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+/* ── Blockquote ─────────────────────────────────────────── */
+
+blockquote {
+  border-left: 1px solid var(--accent-border);
+  padding: 0.25rem 0 0.25rem 1.75rem;
+  margin: 2.5rem 0;
+}
+
+blockquote p {
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+blockquote cite {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-style: normal;
+  opacity: 0.75;
+}
+
+/* ── Work entries ───────────────────────────────────────── */
+
+.work-entry {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.work-entry:last-child { border-bottom: none; }
+
+.work-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+  gap: 1rem;
+}
+
+.work-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.work-company {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+
+.work-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.work-bullets {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.work-bullets li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.work-bullets li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-dim);
+}
+
+/* ── Skills ─────────────────────────────────────────────── */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.skill-group h3 {
+  margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  background: var(--accent-subtle);
+  transition: border-color 0.2s, color 0.2s;
+}
+.skill-tag:hover {
+  border-color: var(--accent-border);
+  color: var(--text);
+}
+
+/* ── Photo ──────────────────────────────────────────────── */
+
+.photo-wrapper {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(8%) contrast(1.05);
+  transition: filter 0.4s;
+}
+
+.photo-caption {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  margin-top: 0.75rem;
+}
+
+/* ── Work page header ───────────────────────────────────── */
+
+.profile-header {
+  padding: 4.5rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.profile-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.profile-links a:hover { color: var(--accent); opacity: 1; }
+
+/* ── Teaser link ────────────────────────────────────────── */
+
+.teaser-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 1.5rem;
+  border-bottom: 1px solid var(--accent-border);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.teaser-link:hover { opacity: 0.65; }
+
+/* ── Education ──────────────────────────────────────────── */
+
+.edu-entry {
+  padding: 1.5rem 0;
+}
+
+.edu-degree {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.edu-school {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .nav { padding: 0 1.25rem; }
+  main { padding: 0 1.25rem; }
+  .footer { padding: 2rem 1.25rem; }
+  .work-meta { flex-direction: column; gap: 0.2rem; }
+  .work-company { text-align: left; }
+  .hero { padding: 3.5rem 0 3rem; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+}
