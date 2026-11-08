@@ -8,9 +8,12 @@ const experience = [
     period: 'Nov 2023 – present',
     company: 'Cloudera',
     bullets: [
-      'Built scalable performant infrastructure on top of Kubernetes supporting the cloudera enterprise AI platform with additional focus on FedRamp.',
-      'Mentored teams and leading the adoption of Istio service mesh across different form factors of the platform.',
-      'Collaborated on cross-functional platform initiatives, driving company-wide adoption of standardized tooling across engineering teams and improving developer productivity metrics.',
+      'Built scalable Kubernetes infrastructure for the Cloudera enterprise AI platform, with a focus on FedRamp compliance.',
+      'Contributed to Cloudera\'s internal AI and LLM initiatives, hosting and serving models, shaping infrastructure requirements, and supporting the rollout of LLM-backed tooling across engineering.',
+      'Mentored teams and led the adoption of Istio service mesh across different form factors of the platform.',
+      'Drove company-wide adoption of standardized tooling, improving developer productivity across engineering.',
+      'Managed on-prem private cloud infrastructure, overseeing compute, storage and networking layers for production workloads.',
+      'Led cross-functional onboarding, partnering with product, security and engineering teams to define standards and accelerate team ramp-up.',
     ],
   },
   {
@@ -78,7 +81,7 @@ const experience = [
 const skills = [
   {
     group: 'Infrastructure',
-    tags: ['Envoy', 'Istio', 'Kubernetes', 'Linux', 'Solaris'],
+    tags: ['Envoy', 'Grafana', 'Istio', 'Kubernetes', 'Linux', 'Prometheus'],
   },
   {
     group: 'Cloud',
@@ -86,19 +89,23 @@ const skills = [
   },
   {
     group: 'Platform',
-    tags: ['ArgoCD', 'Harness', 'Helm', 'Karpenter', 'Terraform', 'Vault'],
+    tags: ['ArgoCD', 'Harness', 'Helm', 'Karpenter', 'Kustomize', 'Terraform', 'Vault'],
+  },
+  {
+    group: 'AI & LLM',
+    tags: ['LLM Infrastructure', 'Model Serving'],
   },
   {
     group: 'Data & Streaming',
-    tags: ['ELK', 'Kafka', 'Flink', 'Redis', 'Solr', 'Zookeeper'],
+    tags: ['Cassandra', 'ELK', 'Flink', 'Hadoop', 'Kafka', 'Redis', 'Solr', 'Zookeeper'],
   },
   {
     group: 'Edge & Networking',
-    tags: ['Akamai', 'Cloudflare', 'Security', 'Networking'],
+    tags: ['Akamai', 'Cloudflare'],
   },
   {
     group: 'Languages',
-    tags: ['Go', 'Java', 'Python', 'Perl', 'Shell'],
+    tags: ['Go', 'Java', 'Python', 'Shell'],
   },
 ];
 ---
@@ -108,8 +115,8 @@ const skills = [
   <!-- Profile header -->
   <section class="profile-header">
     <span class="section-label">Profile</span>
-    <h1 style="font-size: clamp(2rem, 5vw, 3rem);">Suresh Raju</h1>
-    <p style="font-style: italic; color: var(--text-muted); margin-top: 0.5rem; font-size: 1.05rem;">
+    <h1 class="profile-name">Suresh Raju</h1>
+    <p class="profile-subtitle">
       Scalable infrastructure &amp; site reliability
     </p>
     <div class="profile-links">
@@ -123,13 +130,13 @@ const skills = [
   <section class="section">
     <span class="section-label">Summary</span>
     <p>
-      Twenty-five years of experience in scalable cloud infrastructure, distributed systems,
-      product development, technology management and customer success across America, Europe and Asia.
+      Twenty-five years building and operating infrastructure at scale, across cloud-native platforms,
+      distributed systems, and site reliability, for companies from early-stage startups to global enterprise.
     </p>
-    <p style="color: var(--text-muted);">
-      I build and stabilise data pipelines and platform infrastructure that drive customer adoption.
-      I've mentored and led engineering teams to deliver on problems of performance, scale, reliability
-      and data management — from early-stage startups to global enterprise platforms.
+    <p class="text-muted">
+      I've led platform and SRE teams through hard problems of performance, scale, and reliability:
+      large-scale Kubernetes deployments, service mesh adoption, AI platform infrastructure,
+      and private cloud operations across AWS, GCP, and on-prem.
     </p>
   </section>
 

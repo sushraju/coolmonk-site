@@ -354,11 +354,26 @@ blockquote cite {
   margin-top: 0.75rem;
 }
 
+/* ── Utilities ──────────────────────────────────────────── */
+
+.text-muted { color: var(--text-muted); }
+
 /* ── Work page header ───────────────────────────────────── */
 
 .profile-header {
   padding: 4.5rem 0 3rem;
   border-bottom: 1px solid var(--border);
+}
+
+.profile-name {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.profile-subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
 }
 
 .profile-links {
